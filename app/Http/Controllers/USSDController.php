@@ -81,7 +81,8 @@ class USSDController extends Controller
             }
             break;
 
-            case 2:
+            case ($level == 2 && !empty($ussd_string)):
+                
                 if ($ussd_key[0] == "1") {
                     $this->WelcomeMenu();
                 } else if ($ussd_key[0] == "2") {
