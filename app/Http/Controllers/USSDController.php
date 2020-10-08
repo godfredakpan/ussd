@@ -29,15 +29,13 @@ class USSDController extends Controller
 
             header('Content-type: text/plain');
 
-            $this->WelcomeMenu();
-            
             if(User::where('phone_number', $phone)->exists()){
                 // Function to handle already registered users
 
-                $user_info = User::where('phone_number', $phone)->first();
+                // $user_info = User::where('phone_number', $phone)->first();
 
                 // $this->handleReturnUser($text, $phone);
-                $data = $this->handleReturnUserInformation($text, $phone, $user_info);
+                $data = $this->handleReturnUserInformation($text, $phone);
 
             }else {
                 // Function to handle new users
@@ -52,9 +50,7 @@ class USSDController extends Controller
         }
     }
 
-
-
-    public function handleReturnUserInformation($ussd_string, $phone, $user_info)
+    public function handleReturnUserInformation($ussd_string, $phone)
   {
         $ussd_string_exploded = explode ("*",$ussd_string);
 
@@ -70,13 +66,12 @@ class USSDController extends Controller
             case ($level == 1 && !empty($ussd_string)):
                 if ($ussd_string_exploded[0] == "1") {
                     // If user selected 1 show them balance
-                    $this->ussd_stop("My Data Balance is $user_info->balance");
+                    $this->ussd_stop("My Data Balance is 350GB");
 
                 } else if ($ussd_string_exploded[0] == "2") {
                     //If user selected 2, show them phone number
-                    $this->ussd_stop("My Phone Number is $user_info->phone_number");
 
-                    // $this->sendText("This is a subscription service from SampleUSSD.",$phone);
+                    $this->ussd_stop("My Phone Number is $phone");
 
                 } else if ($ussd_string_exploded[0] == "3") {
                     //If user selected 3, exit
@@ -87,13 +82,31 @@ class USSDController extends Controller
         }
     }
 
+    public function handleSms($ussd_string, $phone)
+    {
+
+        $ref_link = $this->quickRandom();
+
+        $sms = $this->sendText("Hello, I invite you to join phoonePOS through this link ($ref_link) by using your mobile phone as POS for agency banking and start earning income.",$phone);
+
+        $this->RewardProgram($ref_link, $phone);
+
+      }
+
 
     public function ussd_proceed($ussd_text) {
-        echo "$ussd_text";
+        echo "CON $ussd_text";
       }
       public function ussd_stop($ussd_text) {
-        echo "$ussd_text";
+        echo "END $ussd_text";
       }
 
+
+      public static function quickRandom($length = 8)
+        {
+            $string = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            return substr(str_shuffle(str_repeat($string, $length)), 0, $length);
+        }
 
 }

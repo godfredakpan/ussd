@@ -11,11 +11,10 @@ trait USSDMenu{
         $this->ussd_proceed($start);
     }
 
-    // public function StartMenu(){
-    //     $start  = "Hello ! Welcome\n";
-    //     $start .= "1. What is your Phone Number?\n";
-    //     $start .= "3. Exit\n";
-    //     $this->ussd_proceed($start);
-    // }
+    public function RewardProgram($ref_link, $phone){
+        $start  = "Hello ! Welcome to reward program, an sms has been sent to $phone with the referal link $ref_link \n";
+        $start .= "3. Exit\n";
+        $this->ussd_proceed($start);
+    }
 
 }

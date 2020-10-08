@@ -25,6 +25,6 @@ trait SmsTrait
             echo "Error: ".$e.getMessage();
         }
 
-        return "I am done";
+        return "SMS sent";
     }
 }
