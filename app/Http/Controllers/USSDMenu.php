@@ -24,7 +24,7 @@ trait USSDMenu{
     }
 
     public function RewardProgram($ref_link, $phone){
-        $start  = "Hello ! Welcome to reward program, an sms has been sent to $phone with the referral link www.link.com/ref=$ref_link \n";
+        $start  = "Hello ! Welcome to reward program, an sms has been sent to $phone with the referral link www.link.com/ref=$ref_link , Kindly activate your account and get 10% .... \n";
         $this->ussd_stop($start);
     }
 

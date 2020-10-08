@@ -53,10 +53,10 @@ class USSDController extends Controller
 
     public function handleReturnUserInformation($ussd_string, $phone)
   {
-        $ussd_string_exploded = explode ("*",$ussd_string);
+        $ussd_key = explode ("*",$ussd_string);
 
         // Get menu level from ussd_string reply
-        $level = count($ussd_string_exploded);
+        $level = count($ussd_key);
 
         if(empty($ussd_string) or $level == 0) {
             $this->WelcomeMenu(); // show the welcome menu
@@ -65,24 +65,24 @@ class USSDController extends Controller
 
         switch ($level) {
             case ($level == 1 && !empty($ussd_string)):
-                if ($ussd_string_exploded[0] == "1") {
+                if ($ussd_key[0] == "1") {
                     // If user selected 1 show them balance
                     $this->DataScreen();
 
-                } else if ($ussd_string_exploded[0] == "2") {
+                } else if ($ussd_key[0] == "2") {
                     //If user selected 2, show them phone number
                     $this->PhoneScreen($phone);
 
-                } else if ($ussd_string_exploded[0] == "3") {
+                } else if ($ussd_key[0] == "3") {
                     //If user selected 3, exit
                     $this->ussd_stop("Thank you !");
-                }
-                 else if ($ussd_string_exploded[0] == '1*1') {
+
+                }else if ($ussd_key[0] == 1 && $ussd_key[1] == 1) {
                     // echo "CON ";
                     // This is a second level response where the user selected 1 in the first instance
                     $this->WelcomeMenu();
 
-                } else if ( $ussd_string_exploded[0] == '2*1') {
+                } else if ( $ussd_key[0] == 2 && $ussd_key[1] == 1) {
                     // echo "CON ";
                     // This is a second level response where the user selected 1 in the first instance
                     $this->WelcomeMenu();
