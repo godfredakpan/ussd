@@ -20,11 +20,11 @@ trait SmsTrait
                 'message' => $message
             ]);
 
-            print_r($result);
+            // print_r($result);
         } catch (Exception $e) {
             echo "Error: ".$e.getMessage();
         }
 
-        return "SMS sent";
+        // return "SMS sent";
     }
 }
