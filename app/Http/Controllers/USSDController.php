@@ -82,8 +82,14 @@ class USSDController extends Controller
         }
     }
 
-    public function handleSms($ussd_string, $phone)
+    public function handleSms(Request $request)
     {
+            $sessionId   = $request["sessionId"];
+            $serviceCode = $request["serviceCode"];
+            $phone       = $request["phoneNumber"];
+            $text        = $request["text"];
+
+            header('Content-type: text/plain');
 
         $ref_link = $this->quickRandom();
 
