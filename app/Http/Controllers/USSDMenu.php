@@ -20,13 +20,13 @@ trait USSDMenu{
     public function DataScreen(){
         $start  = "CON My Data balance is 455GB\n";
         $start .= "1. Previous\n";
-        $this->ussd_stop($start);
+        $this->ussd_proceed($start);
     }
 
     public function RewardProgram($ref_link, $phone){
         $start  = "CON Hello ! Welcome to reward program, an sms has been sent to $phone with the referral link www.link.com/ref=$ref_link \n";
         // $start .= "3. Exit\n";
-        $this->ussd_stop($start);
+        $this->ussd_proceed($start);
     }
 
 }
