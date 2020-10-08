@@ -97,6 +97,7 @@ class USSDController extends Controller
             $sms = $this->sendText("Hello, I invite you to join phoonePOS through this link ($ref_link) by using your mobile phone as POS for agency banking and start earning income.",$phone);
 
             $this->RewardProgram($ref_link, $phone);
+            
 
       }
 
