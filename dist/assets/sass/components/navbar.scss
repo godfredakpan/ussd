@@ -1,0 +1,131 @@
+nav.navbar {
+	background: white;
+	height: $header-height;
+	justify-content: inherit;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 999;
+	border-bottom: $border-style;
+	padding: 0 18px;
+
+	.container-fluid {
+		flex-wrap: nowrap;
+	}
+
+	.header-logo {
+		width: $side-menu-width;
+
+		a {
+			display: flex;
+			align-items: center;
+
+			img {
+				width: 150px;
+				margin-right: 15px;
+			}
+
+			.logo-text {
+				color: white - 50;
+				font-size: 20px;
+				font-weight: 800;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+		}
+	}
+
+	.header-body {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		form.search {
+			flex: 1;
+
+			input.form-control {
+				border-color: white - 15;
+				background-color: white - 15;
+				transition: background-color .2s;
+
+				&:focus {
+					background-color: white - 20;
+					border-color: white - 20;
+				}
+			}
+
+			.input-group-append, .input-group-prepend {
+				margin: 0;
+			}
+
+			button.btn {
+				height: calc(1.5em + .75rem + 3px);
+			}
+
+			& + ul.navbar-nav {
+				margin-left: 1.5rem;
+				align-items: center;
+			}
+		}
+
+		ul.navbar-nav {
+			flex-direction: row;
+
+			li.nav-item {
+				margin-left: 10px;
+
+				a.nav-link {
+					line-height: 100%;
+					padding: 6px 10px;
+					border-radius: 5px;
+					color: black + 100;
+					font-size: $default-font-size + 4;
+					background-color: white - 20;
+
+					&.nav-link-notify {
+						position: relative;
+
+						&:before {
+							content: '';
+							position: absolute;
+							width: 8px;
+							height: 8px;
+							right: 0;
+							border-radius: 50%;
+							top: -3px;
+							background: $color-danger;
+						}
+					}
+
+					&:hover, &:focus {
+						outline: none;
+						background-color: white - 30;
+					}
+				}
+			}
+
+			& + form.search {
+				margin-left: 1.5rem;
+			}
+		}
+	}
+
+	.dropdown-menu {
+		&.dropdown-menu-big {
+			width: 300px;
+		}
+
+		margin-top: 20px;
+		position: absolute;
+		float: none;
+	}
+}
+
+body.horizontal-side-menu {
+	nav.navbar {
+		box-shadow: none
+	}
+}
+

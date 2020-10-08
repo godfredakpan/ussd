@@ -1,0 +1,457 @@
+@media (max-width: 1200px) {
+
+	.chat-app-wrapper {
+		position: relative;
+
+		.chat-app {
+			.chat-sidebar {
+				// display: none;
+				z-index: 99;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				width: 50%;
+				max-width: 50%;
+				position: absolute;
+				background: white;
+				display: none;
+				box-shadow: 10px 0px 10px -15px black;
+
+				&.chat-sidebar-opened {
+					display: block;
+				}
+			}
+
+			.chat-body {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+
+		.btn-chat-sidebar-open {
+			display: inline-flex;
+		}
+	}
+
+	body.dark {
+		.chat-app-wrapper {
+			.chat-app {
+				.chat-sidebar {
+					background: $body-bg-color-dark-light;
+				}
+			}
+		}
+	}
+
+	.user-page {
+		padding: 20px;
+		height: auto;
+
+		.card {
+			width: auto;
+
+			.card-body {
+				padding: 30px;
+			}
+		}
+	}
+
+}
+
+@media (max-width: 992px) {
+
+	.side-menu {
+		background-color: white;
+		z-index: 999;
+		box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .15);
+		left: -80%;
+		opacity: 0;
+		transition: left .2s;
+
+		&.show {
+			left: 0;
+			opacity: 1;
+		}
+
+		.side-menu-body {
+			header {
+				padding: 0 15px;
+			}
+
+			& > ul > li > a {
+				padding: 7px 20px;
+			}
+		}
+	}
+
+	nav.navbar {
+		justify-content: space-between;
+
+		.header-logo {
+			width: auto;
+		}
+
+		form.search {
+			position: absolute;
+			top: -50%;
+			right: 0;
+			left: 0;
+			display: none;
+			background: white;
+			margin-left: 0 !important;
+			z-index: 99;
+			box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .15);
+
+			.form-control {
+				padding: 0 30px;
+				height: $header-height;
+				font-size: $default-font-size;
+
+				&::-webkit-input-placeholder {
+					color: black !important;
+				}
+			}
+
+			.input-group {
+				height: 100%;
+			}
+
+			.input-group-append, .input-group-prepend {
+				display: none;
+			}
+
+			&.show {
+				top: $header-height;
+				display: block;
+			}
+
+			// display: none;
+		}
+
+		.header-body {
+			justify-content: inherit;
+			flex: none;
+
+			ul.navbar-nav {
+				margin: 0 !important;
+			}
+		}
+	}
+
+	main {
+		&.main-content {
+			margin-left: 0 !important;
+		}
+	}
+
+	.page-header {
+		& > div:nth-child(2) {
+			margin-top: 15px;
+		}
+	}
+
+}
+
+@media (max-width: 768px) {
+
+	.toast-top-right {
+		top: $header-height + 15;
+		right: 15px;
+	}
+
+	.toast-top-left {
+		top: $header-height + 20;
+		left: 20px;
+	}
+
+	nav.navbar {
+		padding: 0;
+
+		.header-logo a img {
+			width: 40px;
+		}
+	}
+	.page-header {
+		padding-bottom: 20px;
+
+		h1, h2, h3, h5, h6 {
+			font-size: $default-font-size + 8;
+		}
+	}
+	main.main-content {
+		padding: 20px 0px;
+	}
+	.table-responsive-stack tr {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		border-bottom: 3px solid #ccc;
+		display: block;
+	}
+	/*  IE9 FIX   */
+	.table-responsive-stack td {
+		float: left \9
+	;
+		width: 100%;
+	}
+
+	.sidebar {
+		& > ul.nav {
+			display: flex;
+
+			li.nav-item {
+				border: none;
+			}
+		}
+	}
+	nav.navbar {
+		.dropdown-menu {
+			position: fixed;
+			width: auto !important;
+			left: 10px;
+			right: 10px;
+			top: $header-height;
+			margin-top: 10px;
+		}
+	}
+
+	nav.navbar {
+		.navbar-menu {
+			& > ul {
+				&:not(.mobile-navbar-toggler) {
+					&.mobile-navbar-open {
+						display: block;
+
+						.dropdown {
+							width: 100%;
+
+							& > .dropdown-menu {
+								margin-top: 0;
+								display: block;
+								border-radius: 0;
+								box-shadow: none;
+								width: 100%;
+								position: static;
+
+								.dropdown-menu-body {
+									padding: 0 !important;
+								}
+
+								li {
+									a {
+										padding: 0 20px;
+									}
+								}
+
+								.dropdown-divider {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+
+				li {
+					a {
+						height: auto;
+						padding: 10px 20px;
+					}
+				}
+			}
+		}
+
+		.navbar-tools {
+			ul {
+				li {
+					.dropdown-menu {
+						position: fixed;
+						width: auto !important;
+						left: 10px;
+						right: 10px;
+						top: $header-height;
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	.user-page {
+		padding: 20px;
+		height: auto;
+
+		.card {
+			width: 100%;
+
+			.card-body {
+				padding: 30px;
+			}
+		}
+	}
+
+	.fc {
+		.fc-toolbar {
+			&.fc-header-toolbar {
+				& > div {
+					float: none !important;
+
+					.fc-button-group {
+						float: none !important;
+					}
+
+					&.fc-left {
+						display: flex;
+						justify-content: center;
+						margin-bottom: 15px;
+					}
+
+					&.fc-right {
+						margin-bottom: 5px;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+@media (max-width: 414px) {
+
+	nav.navbar {
+		.navbar-menu {
+			padding-left: 0;
+		}
+
+		.navbar-tools {
+			ul {
+				& > li {
+					margin-left: 5px;
+
+					&.user-profile.dropdown {
+						& > a {
+							padding: 0 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.chat-app-wrapper {
+		.chat-app {
+			.chat-sidebar {
+				width: 75%;
+				max-width: 75%;
+			}
+
+			.chat-body {
+				.chat-body-messages {
+					.message-items {
+						.message-item {
+							max-width: 90%;
+
+							&.message-item-media {
+								ul {
+									a {
+										img {
+											width: 75px;
+										}
+
+										span {
+											display: none;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.nav {
+		display: block;
+		border: none;
+
+		li.nav-item {
+			border-bottom: 1px solid white - 20;
+			margin-bottom: 0;
+
+			&:last-child {
+				border: none;
+			}
+
+			a.nav-link {
+				border: none;
+			}
+		}
+	}
+
+	body.dark {
+		.nav {
+			li.nav-item {
+				border-bottom-color: $body-bg-color-dark-light + 60;
+			}
+		}
+	}
+
+	.wizard > .steps > ul > li {
+		float: none;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.wizard > .content {
+		background: none;
+	}
+
+	.wizard > .content > .body {
+		position: static;
+		padding: 0;
+	}
+
+	.dataTables_wrapper {
+		.dataTables_filter {
+			display: block;
+		}
+	}
+
+}
+
+@media (max-width: 375px) {
+	nav.navbar {
+		.navbar-menu {
+			padding-left: 0;
+		}
+
+		.navbar-tools {
+			ul {
+				& > li {
+					margin-left: 5px;
+
+					&.navbar-search {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.chat-app-wrapper {
+		.chat-app {
+			.chat-sidebar {
+				width: 100%;
+				max-width: 100%;
+				box-shadow: none;
+			}
+		}
+	}
+}
+
+@media print {
+	.page-header {
+		display: none;
+	}
+}

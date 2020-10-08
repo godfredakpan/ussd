@@ -1,0 +1,12 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	position: relative;
+	height: 100%;
+	background: white - 5;
+	font-size: $default-font-size;
+	padding-top: $header-height;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}

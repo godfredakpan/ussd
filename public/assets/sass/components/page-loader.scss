@@ -1,0 +1,25 @@
+.page-loader {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1001;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .spinner-border {
+    margin-bottom: 15px;
+    color: $color-primary;
+  }
+
+  span {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $default-text-color;
+    font-size: $default-font-size - 2
+  }
+}

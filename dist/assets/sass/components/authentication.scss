@@ -1,0 +1,19 @@
+.user-page {
+
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: auto;
+
+   .card {
+      width: 500px;
+      .card-title {
+
+      }
+      .card-body {
+         padding: 50px;
+      }
+   }
+
+}

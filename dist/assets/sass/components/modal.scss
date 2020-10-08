@@ -1,0 +1,32 @@
+.modal {
+   .modal-dialog {
+      .modal-content {
+         border: none;
+         box-shadow: none;
+         border-radius: 3px;
+         .modal-header {
+            height: 60px;
+            padding: 0;
+            display: flex;
+            padding-left: 1.5rem;
+            align-items: center;
+            .modal-title {
+               font-size: $default-font-size + 3;
+               font-weight: 600;
+            }
+            button.close {
+               margin: 0;
+               height: 100%;
+               font-size: $default-font-size + 15;
+               padding: 0 1rem;
+            }
+         }
+         .modal-body {
+            padding: 1.5rem;
+         }
+         .modal-footer {
+            height: 60px;
+         }
+      }
+   }
+}

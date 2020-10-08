@@ -1,0 +1,275 @@
+*:focus {
+  outline: none;
+}
+
+main {
+  &.main-content {
+    margin-left: $side-menu-width;
+    padding: 20px;
+    min-height: 100vh;
+    transition: margin-left .2s;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 998;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.30);
+  transition: opacity .5s;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+.file-manager-items {
+  display: flex;
+  flex-wrap: wrap;
+
+  .file-manager-item {
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 135px;
+      height: 115px;
+      font-size: 8.5em;
+      border: 1px solid white - 30;
+      border-radius: 5px;
+      background-size: cover !important;
+      background-position: center !important;
+    }
+
+    &.folder span {
+      color: #cea65b
+    }
+
+    &.image span {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.small, small {
+  font-size: $default-font-size;
+}
+
+.list-group {
+  .list-group-item {
+    &.active {
+      background: $color-primary;
+
+      * {
+        color: white;
+      }
+
+      .badge.badge-primary {
+        background: white;
+        color: black;
+      }
+    }
+  }
+}
+
+.bring-forward {
+  position: relative;
+  z-index: 1;
+}
+
+body.error-page {
+  img {
+    width: 50%;
+    display: table;
+    margin: 50px auto;
+  }
+}
+
+.table-email-list {
+  table.table {
+    .dropdown {
+      [data-toggle="dropdown"] {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    .email-subject {
+      max-width: 80%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      a {
+        display: inline-block;
+      }
+    }
+
+    td, .table th {
+      padding: .80rem;
+    }
+  }
+
+  a {
+    color: $default-text-color;
+
+    &:hover, &:focus {
+      color: $color-primary
+    }
+  }
+}
+
+.read-mail-body {
+  img {
+    max-width: 50%;
+  }
+}
+
+.bootstrap-tagsinput {
+  box-shadow: none;
+  width: 100%;
+  border: 1px solid #ced4da;
+  min-height: calc(2.25rem + 2px);
+
+  &.focus {
+    border-color: $color-primary + 30;
+  }
+
+  .tag {
+    display: inline-flex;
+    color: black;
+    border-radius: 3px;
+    font-size: $default-font-size - 1;
+    padding: 0 8px;
+    margin: 2px 1px;
+    justify-content: space-between;
+    align-items: center;
+    background: white - 30;
+  }
+}
+
+.list-group {
+  .list-group-item {
+    &.active {
+      background: $color-primary;
+      border-color: transparent;
+    }
+  }
+}
+
+.list-group-flush .list-group-item:first-child {
+  border-top: 0;
+}
+
+.badge {
+  font-weight: 500;
+}
+
+.nav-pills .nav-link.active {
+  background: $color-primary;
+}
+
+.text-muted {
+  color: #a7abc3 !important;
+}
+
+.colorpicker-2x .colorpicker-saturation {
+  width: 200px;
+  height: 200px;
+}
+
+.colorpicker-2x .colorpicker-hue,
+.colorpicker-2x .colorpicker-alpha {
+  width: 30px;
+  height: 200px;
+}
+
+.colorpicker-2x .colorpicker-color,
+.colorpicker-2x .colorpicker-color div {
+  height: 30px;
+}
+
+.jqstooltip {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.hide-show-toggler {
+  .hide-show-toggler-item {
+    display: none;
+  }
+
+  &:hover, &:focus {
+    .hide-show-toggler-item {
+      display: block;
+    }
+  }
+}
+
+.tooltip {
+  font-size: $default-font-size;
+}
+
+.jqvmap-zoomin, .jqvmap-zoomout {
+  box-sizing: initial;
+}
+
+[data-backround-image] {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    background: rgba(black, .5);
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.jqvmap-region {
+  fill: $color-primary-bright;
+}
+
+.a-0 {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.font-weight-800 {
+  font-weight: 800;
+}
+
+.circle canvas {
+  vertical-align: top;
+}
+
+.todo-item {
+  user-select: none;
+  margin-bottom: 10px;
+
+  input[type="checkbox"]:checked {
+    & + label {
+      text-decoration: line-through;
+      color: $color-success - 50
+    }
+  }
+}
