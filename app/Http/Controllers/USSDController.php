@@ -77,13 +77,13 @@ class USSDController extends Controller
                     //If user selected 3, exit
                     $this->ussd_stop("Thank you !");
                 }
-                 else if($ussd_string_exploded[0] == "1*1") {
-                    echo "CON ";
+                 else if ($ussd_string_exploded[0] == '1*1') {
+                    // echo "CON ";
                     // This is a second level response where the user selected 1 in the first instance
                     $this->WelcomeMenu();
 
-                } else if ( $ussd_string_exploded[0] == "2*1") {
-                    echo "CON ";
+                } else if ( $ussd_string_exploded[0] == '2*1') {
+                    // echo "CON ";
                     // This is a second level response where the user selected 1 in the first instance
                     $this->WelcomeMenu();
             }
