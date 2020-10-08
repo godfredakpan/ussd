@@ -110,7 +110,7 @@ class USSDController extends Controller
       }
 
 
-    public function ussd_proceed($ussd_text) {
+      public function ussd_proceed($ussd_text) {
         echo "CON $ussd_text";
       }
       public function ussd_stop($ussd_text) {
