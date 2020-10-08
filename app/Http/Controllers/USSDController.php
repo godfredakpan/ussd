@@ -29,6 +29,8 @@ class USSDController extends Controller
 
             header('Content-type: text/plain');
 
+            $this->WelcomeMenu();
+            
             if(User::where('phone_number', $phone)->exists()){
                 // Function to handle already registered users
 
@@ -39,7 +41,7 @@ class USSDController extends Controller
 
             }else {
                 // Function to handle new users
-                return "User does not exsit";
+                echo "User does not exsit";
 
                 // $this->handleNewUser($text, $phone);
             }
