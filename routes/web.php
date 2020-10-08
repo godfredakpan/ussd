@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Redis;
 |
 */
 
-Route::post('/ussd', 'USSDController@InitiateUssd');
+
 
 

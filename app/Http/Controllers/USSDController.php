@@ -50,6 +50,8 @@ class USSDController extends Controller
         }
     }
 
+
+
     public function handleReturnUserInformation($ussd_string, $phone, $user_info)
   {
         $ussd_string_exploded = explode ("*",$ussd_string);
@@ -70,7 +72,7 @@ class USSDController extends Controller
 
                 } else if ($ussd_string_exploded[0] == "2") {
                     //If user selected 2, show them phone number
-                    $this->ussd_stop("My Phone Number is $user_info->phone");
+                    $this->ussd_stop("My Phone Number is $user_info->phone_number");
 
                     // $this->sendText("This is a subscription service from SampleUSSD.",$phone);
 
@@ -80,16 +82,15 @@ class USSDController extends Controller
                 }
             break;
 
-
         }
     }
 
 
     public function ussd_proceed($ussd_text) {
-        echo "continue $ussd_text";
+        echo "$ussd_text";
       }
       public function ussd_stop($ussd_text) {
-        echo "END $ussd_text";
+        echo "$ussd_text";
       }
 
 
