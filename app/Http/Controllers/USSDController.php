@@ -50,18 +50,18 @@ class USSDController extends Controller
 
     public function handleReturnUserInformation($ussd_string, $phone)
   {
-        $ussd_key = $ussd_string;
+        $ussd_key = explode ("*",$ussd_string);
 
         // Get menu level from ussd_string reply
-        $level = $ussd_key;
+        $level = count($ussd_key);
 
         if(empty($ussd_string) or $level == 0) {
             $this->WelcomeMenu(); // show the welcome menu
         }
 
 
-        // switch ($level) {
-        //     case ($level == 1 && !empty($ussd_string)):
+        switch ($level) {
+            case ($level == 1 && !empty($ussd_string)):
 
                 if ($ussd_key[0] == "1") {
                     // If user selected 1 show them balance
@@ -75,17 +75,17 @@ class USSDController extends Controller
                     //If user selected 3, exit
                     $this->ussd_stop("Thank you !");
 
-                }else if ($ussd_key[0] == "1*1") {
-                    // echo "CON ";
-                    // This is a second level response where the user selected 1 in the first instance
-                    $this->WelcomeMenu();
+                // }else if ($ussd_key[0] == "1" and $ussd_key[1] == "1") {
+                //     // echo "CON ";
+                //     // This is a second level response where the user selected 1 in the first instance
+                //     $this->WelcomeMenu();
 
-                } else if ($ussd_key[0] == "2*1") {
-                    // echo "CON ";
-                    // This is a second level response where the user selected 1 in the first instance
-                    $this->WelcomeMenu();
+                // } else if ($ussd_key[0] == "2" and $ussd_key[1] == "1") {
+                //     // echo "CON ";
+                //     // This is a second level response where the user selected 1 in the first instance
+                //     $this->WelcomeMenu();
             }
-            // break;
+            break;
 
             // case 2:
             //     if ($ussd_key[0] == "1" and $ussd_key[1] == "1") {
@@ -95,7 +95,7 @@ class USSDController extends Controller
             //     }
             // break;
 
-        // }
+        }
     }
 
     public function handleSms(Request $request)
