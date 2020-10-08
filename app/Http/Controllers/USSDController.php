@@ -29,7 +29,8 @@ class USSDController extends Controller
 
             header('Content-type: text/plain');
 
-            if(User::where('phone_number', $phone)->exists()){
+            if($phone){
+                // if(User::where('phone_number', $phone)->exists()){
                 // Function to handle already registered users
 
                 // $user_info = User::where('phone_number', $phone)->first();
