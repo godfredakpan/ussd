@@ -78,22 +78,23 @@ class USSDController extends Controller
                     //If user selected 3, exit
                     $this->ussd_stop("Thank you !");
 
+                }else if ($ussd_key[0] == '1*1') {
+                    // echo "CON ";
+                    // This is a second level response where the user selected 1 in the first instance
+                    $this->WelcomeMenu();
+
+                } else if ( $ussd_key[0] == '2*1') {
+                    // echo "CON ";
+                    // This is a second level response where the user selected 1 in the first instance
+                    $this->WelcomeMenu();
             }
             break;
 
-            case ($level == 2 && !empty($ussd_string)):
-
-                if ($ussd_key[0] == "1") {
-
+            case 2:
+                if ($ussd_key[0] == "1" and $ussd_key[1] == "1") {
                     $this->WelcomeMenu();
-
-                    $level == 1;
-
-                } else if ($ussd_key[0] == "2") {
-
+                } else if ($ussd_key[0] == "2" and $ussd_key[1] == "1") {
                     $this->WelcomeMenu();
-
-                    $level == 1;
                 }
             break;
 
