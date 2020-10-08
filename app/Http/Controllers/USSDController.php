@@ -84,11 +84,11 @@ class USSDController extends Controller
             case ($level == 2 && !empty($ussd_string)):
 
                 if ($ussd_key[0] == "1") {
-                    $ussd_key[0] == 0;
+                    $level == 1;
                     $this->WelcomeMenu();
 
                 } else if ($ussd_key[0] == "2") {
-                    $ussd_key[0] == 0;
+                    $level == 1;
                     $this->WelcomeMenu();
                 }
             break;
