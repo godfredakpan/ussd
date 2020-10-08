@@ -71,7 +71,6 @@ class USSDController extends Controller
 
                 } else if ($ussd_string_exploded[0] == "2") {
                     //If user selected 2, show them phone number
-
                     $this->PhoneScreen($phone);
 
                 } else if ($ussd_string_exploded[0] == "3") {
