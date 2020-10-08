@@ -67,17 +67,25 @@ class USSDController extends Controller
             case ($level == 1 && !empty($ussd_string)):
                 if ($ussd_string_exploded[0] == "1") {
                     // If user selected 1 show them balance
-                    $this->ussd_stop("My Data Balance is 350GB");
+                    $this->DataScreen();
 
                 } else if ($ussd_string_exploded[0] == "2") {
                     //If user selected 2, show them phone number
 
-                    $this->ussd_stop("My Phone Number is $phone");
+                    $this->PhoneScreen($phone);
 
                 } else if ($ussd_string_exploded[0] == "3") {
                     //If user selected 3, exit
                     $this->ussd_stop("Thank you !");
                 }
+                 else if($ussd_string_exploded[0] == "1*1") {
+                    // This is a second level response where the user selected 1 in the first instance
+                    $this->WelcomeMenu();
+
+                } else if ( $ussd_string_exploded[0] == "2*1" ) {
+                    // This is a second level response where the user selected 1 in the first instance
+                    $this->WelcomeMenu();
+            }
             break;
 
         }
@@ -97,7 +105,7 @@ class USSDController extends Controller
             $sms = $this->sendText("Hello, I invite you to join phoonePOS through this link ($ref_link) by using your mobile phone as POS for agency banking and start earning income.",$phone);
 
             $this->RewardProgram($ref_link, $phone);
-            
+
 
       }
 

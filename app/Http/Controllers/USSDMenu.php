@@ -7,8 +7,19 @@ trait USSDMenu{
         $start  = "Hello ! Welcome\n";
         $start .= "1. To check your data balance\n";
         $start .= "2. To check your phone number\n";
-        $start .= "3. Previous\n";
-        $start .= "4. Next\n";
+        $start .= "3. Exit\n";
+        $this->ussd_proceed($start);
+    }
+
+    public function PhoneScreen($phone){
+        $start  = "CON My Phone Number is $phone\n";
+        $start .= "1. Previous\n";
+        $this->ussd_proceed($start);
+    }
+
+    public function DataScreen(){
+        $start  = "CON My Data balance is 455GB\n";
+        $start .= "1. Previous\n";
         $this->ussd_proceed($start);
     }
 
