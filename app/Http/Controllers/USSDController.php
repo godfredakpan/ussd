@@ -30,9 +30,6 @@ class USSDController extends Controller
             header('Content-type: text/plain');
 
             if($phone){
-                // if(User::where('phone_number', $phone)->exists()){
-                // Function to handle already registered users
-
                 // $user_info = User::where('phone_number', $phone)->first();
 
                 // $this->handleReturnUser($text, $phone);
@@ -78,15 +75,15 @@ class USSDController extends Controller
                     //If user selected 3, exit
                     $this->ussd_stop("Thank you !");
 
-                }else if ($ussd_key[0] == '1*1') {
-                    // echo "CON ";
-                    // This is a second level response where the user selected 1 in the first instance
-                    $this->WelcomeMenu();
+                // }else if ($ussd_key[0] == '1*1') {
+                //     // echo "CON ";
+                //     // This is a second level response where the user selected 1 in the first instance
+                //     $this->WelcomeMenu();
 
-                } else if ( $ussd_key[0] == '2*1') {
-                    // echo "CON ";
-                    // This is a second level response where the user selected 1 in the first instance
-                    $this->WelcomeMenu();
+                // } else if ( $ussd_key[0] == '2*1') {
+                //     // echo "CON ";
+                //     // This is a second level response where the user selected 1 in the first instance
+                //     $this->WelcomeMenu();
             }
             break;
 
