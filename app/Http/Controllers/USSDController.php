@@ -79,11 +79,11 @@ class USSDController extends Controller
                 }
                  else if($ussd_string_exploded[0] == "1*1") {
                     // This is a second level response where the user selected 1 in the first instance
-                    $this->WelcomeMenu();
+                    "CON".$this->WelcomeMenu();
 
                 } else if ( $ussd_string_exploded[0] == "2*1" ) {
                     // This is a second level response where the user selected 1 in the first instance
-                    $this->WelcomeMenu();
+                    "CON".$this->WelcomeMenu();
             }
             break;
 
