@@ -13,14 +13,14 @@ trait USSDMenu{
 
     public function PhoneScreen($phone){
         $start  = "My Phone Number is $phone\n";
-        // $start .= "1. Previous\n";
-        $this->ussd_stop($start);
+        $start .= "1. Previous\n";
+        $this->ussd_proceed($start);
     }
 
     public function DataScreen(){
         $start  = "My Data balance is 455GB\n";
-        // $start .= "1. Previous\n";
-        $this->ussd_stop($start);
+        $start .= "1. Previous\n";
+        $this->ussd_proceed($start);
     }
 
     public function RewardProgram($ref_link, $phone){
