@@ -71,20 +71,41 @@ class USSDController extends Controller
                     //If user selected 2, show them phone number
                     $this->PhoneScreen($phone);
 
-                } else if ($ussd_key[0] == "3") {
+                } else if ($ussd_key[0] == "5") {
                     //If user selected 3, exit
                     $this->ussd_stop("Thank you !");
 
-                }else if ($ussd_key[0] == "1" and $ussd_key[1] == "1") {
-                    // echo "CON ";
-                    // This is a second level response where the user selected 1 in the first instance
-                    $this->WelcomeMenu();
 
-                } else if ($ussd_key[0] == "2" and $ussd_key[1] == "1") {
-                    // echo "CON ";
-                    // This is a second level response where the user selected 1 in the first instance
-                    $this->WelcomeMenu();
-            }
+                 } else if ($ussd_key[0] == "3") {
+                    //If user selected 3, exit
+                    $this->Previous();
+
+
+                } else if ($ussd_key[0] == "4") {
+                    //If user selected 3, exit
+                    $this->Next();
+
+                }
+                // else if ($ussd_key[0] == "1" and $ussd_key[1] == "1") {
+                //     // echo "CON ";
+                //     // This is a second level response where the user selected 1 in the first instance
+                //     $this->Previous();
+
+                // } else if ($ussd_key[0] == "2" and $ussd_key[1] == "1") {
+                //     // echo "CON ";
+                //     // This is a second level response where the user selected 1 in the first instance
+                //     $this->Next();
+
+                // }else if ($ussd_key[0] == "1" and $ussd_key[1] == "1") {
+                //     // echo "CON ";
+                //     // This is a second level response where the user selected 1 in the first instance
+                //     $this->Previous();
+
+                // } else if ($ussd_key[0] == "2" and $ussd_key[1] == "1") {
+                //     // echo "CON ";
+                //     // This is a second level response where the user selected 1 in the first instance
+                //     $this->Next();
+                // }
             break;
 
             // case 2:
